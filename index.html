@@ -12,37 +12,82 @@
 </head>
 <body>
   <h1>Puzzly Privacy Policy</h1>
-  <p>Last updated: October 14, 2026</p>
-  <p>This policy covers the Puzzly mobile app (bundle ID com.gmail.vicapitallc.puzzly) and the Puzzly multiplayer puzzle service it talks to.</p>
+  <p>Last updated: November 5, 2026</p>
+  <p>This policy covers the Puzzly mobile app (bundle ID com.gmail.vicapitallc.puzzly) and the Puzzly multiplayer puzzle service it talks to. Puzzly is made by Vi Capital LLC (“we”, “us”).</p>
+  <p>The short version: we collect only what Puzzly needs to run. We do not sell your data, we do not show ads, we do not use analytics or advertising SDKs, and we do not track you across other companies’ apps or websites.</p>
 
-  <h2>Data we collect</h2>
+  <h2>Signing in</h2>
   <ul>
-    <li>Account data. If you sign in with email, a guest session, or Sign in with Apple, authentication is handled by Clerk. We receive an account identifier and the profile details you provide, such as an email address.</li>
-    <li>Photos. If you create a puzzle from a photo, that image is uploaded so the puzzle can be built and played.</li>
-    <li>Gameplay data. Room membership, piece counts, piece placement, and related game state are stored so multiplayer rooms work.</li>
-    <li>Device data needed to run the app, such as a stored session token on your device.</li>
+    <li><strong>Guest.</strong> You can play without an account. We create a random guest ID so your game can be saved and resumed. Guests cannot add friends or send messages.</li>
+    <li><strong>Sign in with Apple or email.</strong> Sign-in is handled by Clerk. We receive an account ID, your email address (with Sign in with Apple this may be an Apple private relay address), and the name and profile photo on your account, if you set them. Email sign-in uses a one-time code sent to your email.</li>
+    <li>Your sign-in session token is stored in secure storage on your device.</li>
   </ul>
 
-  <h2>How we use it</h2>
-  <p>We use this data to create and sign in to your account, host puzzle rooms, show your photos as puzzles, and let you delete your account. We do not sell your data. The app’s privacy manifest sets tracking to off. We do not use your data to track you across other companies’ apps or websites.</p>
+  <h2>Data we collect and why</h2>
+  <ul>
+    <li><strong>Profile.</strong> Your display name and, if you add one, a profile photo. Other players see these in games, in friend search, and in your friends’ lists. A profile photo is shrunk to 512 pixels and stored by Clerk.</li>
+    <li><strong>Gameplay.</strong> The games you create or join, the puzzle and piece count, piece positions, which pieces you placed, and stats such as puzzles completed, pieces placed, and play time. We use this to run multiplayer games, save your progress, and show your stats.</li>
+    <li><strong>Photos you turn into puzzles.</strong> In a solo game, your photo stays on your device. If you use your own photo in a Friends &amp; Family game or an open table, it is resized to at most 2,048 pixels, saved as a new JPEG, and uploaded so the other players can see it. The app does not read the photo’s location data. Photos in Friends &amp; Family games are shown only to players in that game. Photos in open tables can be seen by anyone who views or joins that table.</li>
+    <li><strong>Messages.</strong> Messages you send to other players are stored on our server so both of you can read the conversation. We also store whether a message has been read.</li>
+    <li><strong>Friends.</strong> Your friends list, friend requests you send and receive (and whether they were accepted or declined), and in-app notifications such as “new friend request” or “new message”.</li>
+    <li><strong>Online status.</strong> While you are signed in and the app is connected, your friends can see that you are online. This is kept in server memory only and is not saved.</li>
+    <li><strong>Invites.</strong> When you invite someone to a Friends &amp; Family game by email or phone number, we store that email address or number with the invite. Email invites are sent by us through Resend from invites@puzzlyapp.com. For phone invites we do not send texts: your phone’s own share sheet or Messages app sends the code. If the invited email or number belongs to a Puzzly account, that person also sees the invite in the app.</li>
+    <li><strong>Push notifications.</strong> If you allow notifications, we store your device’s Expo push token, linked to your account, so we can tell you when it’s your turn, when you are invited, or when you get a message or friend request. A message notification can include the first part of the message text.</li>
+    <li><strong>Send feedback.</strong> When you use Profile › Send feedback, your message is emailed to us through Resend, together with your display name, your account email and ID (if signed in), the app version, and your device model. Your email is set as the reply-to address so we can answer you. Feedback is not stored in our database.</li>
+    <li><strong>Reports.</strong> When you report a player, we store the report (who reported whom, the reason, any details you add, and the game or message it is about) and email it to us through Resend so we can review it, usually within 24 hours. The email can include the text of the reported message.</li>
+    <li><strong>Blocks.</strong> When you block a player, we store that block. Blocking hides their messages, invites, and friend requests from you, stops them messaging or notifying you, and ends any friendship between you. Reporting a player also blocks them unless you choose not to.</li>
+  </ul>
 
-  <h2>Who processes it</h2>
-  <p>Clerk processes sign-in. Our servers (Express, Socket.IO, and Postgres) store account-linked game data and uploaded photos. Hosting may be on Replit or a later production host we name in the app.</p>
+  <h2>Word filter</h2>
+  <p>To keep Puzzly friendly, our server checks messages and display names against a list of rude words and slurs. Rude words in messages are replaced with “***” before the message is saved. A display name with a rude word is rejected or masked. The check runs automatically; nobody reads your messages to do this.</p>
+
+  <h2>Permissions on your device</h2>
+  <ul>
+    <li><strong>Photos:</strong> only when you choose a photo for a puzzle or your profile photo.</li>
+    <li><strong>Notifications:</strong> only if you allow them.</li>
+  </ul>
+  <p>Puzzly does not use your location, contacts, camera, microphone, or advertising identifier.</p>
+
+  <h2>Who processes your data</h2>
+  <ul>
+    <li><strong>Clerk</strong> (clerk.puzzlyapp.com): account sign-in, email codes, and your account email, name, and profile photo.</li>
+    <li><strong>Render</strong>: hosts the Puzzly game server (in the United States).</li>
+    <li><strong>Neon</strong>: our Postgres database and photo storage.</li>
+    <li><strong>Resend</strong>: sends email invites, and delivers feedback and player reports to us.</li>
+    <li><strong>Expo and Apple</strong>: deliver push notifications to your device through Expo’s push service and Apple Push Notification service.</li>
+  </ul>
+  <p>These providers process data only to provide their service to us. As with any internet service, they receive your device’s IP address when the app connects. Our own server logs record the request type, path, and result, not your IP address or message text. We do not sell or share your data for advertising, and we do not use third-party analytics or ads. The app’s privacy manifest sets tracking to off.</p>
 
   <h2>How long we keep it</h2>
-  <p>We keep account, photo, and gameplay data until you delete your account, or until we no longer need it to run the service.</p>
+  <p>We keep your account, profile, games, stats, messages, friends, and push tokens while your account exists. A push token is removed when you sign out on that device or when Apple reports it is no longer valid. If you host a game, you can delete it, which removes it for everyone in it. Guest games are not linked to a named account and may stay on our server. Feedback and report emails stay in our support inbox for as long as we need them to support you and keep Puzzly safe.</p>
 
   <h2>Delete your account</h2>
-  <p>In the app, open Profile and use Delete account. You must confirm. That calls our delete-account endpoint for the signed-in user only and removes local account data and the Clerk identity.</p>
+  <p>In the app, open Profile and use Delete account. You must confirm. This deletes, for the signed-in user only:</p>
+  <ul>
+    <li>your sign-in account at Clerk (with your email, name, and profile photo);</li>
+    <li>your stats and your seats in games;</li>
+    <li>every game you host, with its progress for all players in it;</li>
+    <li>photos you uploaded (the files are removed from storage; if removal fails it is retried automatically);</li>
+    <li>all messages you sent or received, on both sides of the conversation;</li>
+    <li>your friends, friend requests, notifications, and friend-search profile;</li>
+    <li>your push notification tokens.</li>
+  </ul>
+  <p>In games hosted by other players, your name is removed from the pieces you placed, but the game itself stays for them. Some records are kept after deletion: reports filed by or about you and blocks (to keep players safe), the player history list of games hosted by others, which can still show the name you used there, and invites other players sent to your email or phone number. To have these removed too, email us. Data in our providers’ backups may take a short time to expire.</p>
 
   <h2>Children</h2>
-  <p>Puzzly is not directed at children under 13.</p>
+  <p>Puzzly is rated 4+ on the App Store, which means it has no objectionable content. It is a general-audience game and is not directed at children under 13. Children can play solo as a guest without giving us any personal information. Signing in, friends, and messages are meant for players 13 and older or used with a parent’s permission. We do not knowingly collect personal information from children under 13 without a parent’s consent. If you are a parent and think your child has given us personal information, email us and we will delete it.</p>
+
+  <h2>Security</h2>
+  <p>The app talks to our server and providers over encrypted connections (HTTPS). Photos you upload are served only through signed links. No system is perfectly secure, but we limit what we collect and who can see it.</p>
+
+  <h2>Your choices and rights</h2>
+  <p>You can change your name and profile photo in the app, turn off notifications in iOS Settings, block or report any player, and delete your account at any time. You can also email us to ask for a copy of your data or to correct or delete it.</p>
 
   <h2>Changes</h2>
-  <p>If this policy changes, the date at the top of this page will change.</p>
+  <p>If this policy changes, we will update this page and the date at the top.</p>
 
   <h2>Contact</h2>
-  <p>Email support at <a href="mailto:vicapitalllc@gmail.com">vicapitalllc@gmail.com</a>. For account deletion, open Profile in the app and use Delete account.</p>
+  <p>Vi Capital LLC. Email <a href="mailto:vicapitalllc@gmail.com">vicapitalllc@gmail.com</a>. For account deletion, open Profile in the app and use Delete account.</p>
   <p>See also the <a href="support.html">Support</a> page.</p>
 </body>
 </html>
